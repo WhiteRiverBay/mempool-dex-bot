@@ -53,7 +53,7 @@ const CHAIN = {
     "pollingInterval": 1
 }
 
-const wss = new WebSocketServer({ port: 5001 });
+const wss = new WebSocketServer({ port: 5000 });
 
 function publish(type, object) {
     console.log('publish: ', type, object);
