@@ -12,6 +12,7 @@ RUN cd /usr/src/install/openssl-1.1.1l && ./config --prefix=/usr/local/openssl &
 RUN ln -s /usr/local/openssl/bin/openssl /usr/local/bin/openssl
 RUN echo "/usr/local/openssl/lib" >> /etc/ld.so.conf && ldconfig -v
 # install nginx
+RUN mkdir /usr/local/nginx
 RUN cd /usr/src/install/nginx-1.24.0 && ./configure --prefix=/usr/local/nginx --with-http_stub_status_module --with-http_ssl_module --with-http_gzip_static_module --with-openssl=/usr/src/install/openssl-1.1.1l
 RUN cd /usr/src/install/nginx-1.24.0 && make && make install
 RUN ln -s /usr/local/nginx/sbin/nginx /usr/local/bin/nginx
